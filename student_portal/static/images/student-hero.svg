@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Students studying">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e3f2fd"/>
+      <stop offset="100%" style="stop-color:#bbdefb"/>
+    </linearGradient>
+    <linearGradient id="desk" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#5c6bc0"/>
+      <stop offset="100%" style="stop-color:#3949ab"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg)" rx="20"/>
+  <rect x="100" y="380" width="600" height="20" rx="10" fill="#78909c"/>
+  <rect x="150" y="200" width="500" height="180" rx="8" fill="url(#desk)"/>
+  <rect x="200" y="240" width="120" height="80" rx="4" fill="#fff" opacity="0.9"/>
+  <rect x="340" y="240" width="120" height="80" rx="4" fill="#fff" opacity="0.9"/>
+  <rect x="480" y="240" width="120" height="80" rx="4" fill="#fff" opacity="0.9"/>
+  <circle cx="260" cy="160" r="45" fill="#ffcc80"/>
+  <circle cx="400" cy="150" r="45" fill="#ffab91"/>
+  <circle cx="540" cy="160" r="45" fill="#ce93d8"/>
+  <rect x="230" y="200" width="60" height="70" rx="20" fill="#0d6efd"/>
+  <rect x="370" y="190" width="60" height="80" rx="20" fill="#198754"/>
+  <rect x="510" y="200" width="60" height="70" rx="20" fill="#6f42c1"/>
+  <path d="M250 130 Q260 110 270 130" stroke="#5d4037" stroke-width="3" fill="none"/>
+  <path d="M390 120 Q400 100 410 120" stroke="#5d4037" stroke-width="3" fill="none"/>
+  <path d="M530 130 Q540 110 550 130" stroke="#5d4037" stroke-width="3" fill="none"/>
+  <circle cx="255" cy="155" r="4" fill="#333"/>
+  <circle cx="265" cy="155" r="4" fill="#333"/>
+  <circle cx="395" cy="145" r="4" fill="#333"/>
+  <circle cx="405" cy="145" r="4" fill="#333"/>
+  <circle cx="535" cy="155" r="4" fill="#333"/>
+  <circle cx="545" cy="155" r="4" fill="#333"/>
+  <path d="M252 168 Q260 175 268 168" stroke="#333" stroke-width="2" fill="none"/>
+  <path d="M392 158 Q400 165 408 158" stroke="#333" stroke-width="2" fill="none"/>
+  <path d="M532 168 Q540 175 548 168" stroke="#333" stroke-width="2" fill="none"/>
+  <rect x="180" y="320" width="40" height="60" rx="4" fill="#795548"/>
+  <rect x="580" y="320" width="40" height="60" rx="4" fill="#795548"/>
+  <text x="400" y="520" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="28" fill="#1565c0" font-weight="600">Student Portal</text>
+</svg>

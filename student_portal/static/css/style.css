@@ -1,0 +1,137 @@
+/* Student Portal - Custom Styles */
+
+:root {
+    --primary-color: #0d6efd;
+    --hero-gradient: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+main {
+    flex: 1;
+}
+
+/* Hero Section */
+.hero-section {
+    background: var(--hero-gradient);
+}
+
+.min-vh-75 {
+    min-height: 75vh;
+}
+
+.hero-image {
+    max-height: 420px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.feature-icon {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.75rem;
+}
+
+.feature-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Registration Form */
+.section-title {
+    color: var(--primary-color);
+    font-weight: 600;
+    border-bottom: 2px solid rgba(13, 110, 253, 0.2);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.preview-image {
+    max-width: 200px;
+    max-height: 200px;
+    object-fit: cover;
+}
+
+.is-invalid ~ .invalid-feedback {
+    display: block;
+}
+
+/* Student Details */
+.student-photo {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border: 4px solid #fff;
+}
+
+.detail-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #6c757d;
+    margin-bottom: 0.25rem;
+}
+
+.detail-value {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 0;
+}
+
+/* Status Badges */
+.status-badge {
+    padding: 0.4em 0.8em;
+}
+
+.status-pending {
+    background-color: #ffc107 !important;
+    color: #212529 !important;
+}
+
+.status-admitted {
+    background-color: #198754 !important;
+    color: #fff !important;
+}
+
+.status-rejected {
+    background-color: #dc3545 !important;
+    color: #fff !important;
+}
+
+/* Table */
+.table thead th {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.03em;
+}
+
+/* Footer */
+.footer {
+    margin-top: auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+
+    .student-photo {
+        width: 140px;
+        height: 140px;
+    }
+}

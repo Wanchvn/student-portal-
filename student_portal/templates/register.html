@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+
+{% block title %}Register - Student Portal{% endblock %}
+
+{% block content %}
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="card shadow border-0">
+                    <div class="card-header bg-primary text-white py-3">
+                        <h2 class="h4 mb-0"><i class="bi bi-person-vcard me-2"></i>Student Registration</h2>
+                    </div>
+                    <div class="card-body p-4">
+                        <form id="registrationForm" action="{{ url_for('web.register') }}" method="POST"
+                              enctype="multipart/form-data" novalidate>
+                            <h5 class="section-title">Personal Details</h5>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="full_name" class="form-label">Full Name <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="full_name" name="full_name"
+                                           value="{{ form_data.get('full_name', '') if form_data else '' }}" required>
+                                    <div class="invalid-feedback" id="error-full_name"></div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
+                                    <input type="email" class="form-control" id="email" name="email"
+                                           value="{{ form_data.get('email', '') if form_data else '' }}" required>
+                                    <div class="invalid-feedback" id="error-email"></div>
+                                </div>
+                                <div class="col-12">
+                                    <label for="address" class="form-label">Address <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="address" name="address"
+                                           value="{{ form_data.get('address', '') if form_data else '' }}" required>
+                                    <div class="invalid-feedback" id="error-address"></div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="phone" class="form-label">Phone Number <span class="text-danger">*</span></label>
+                                    <input type="tel" class="form-control" id="phone" name="phone"
+                                           value="{{ form_data.get('phone', '') if form_data else '' }}" required>
+                                    <div class="invalid-feedback" id="error-phone"></div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="date_of_birth" class="form-label">Date of Birth <span class="text-danger">*</span></label>
+                                    <input type="date" class="form-control" id="date_of_birth" name="date_of_birth"
+                                           value="{{ form_data.get('date_of_birth', '') if form_data else '' }}" required>
+                                    <div class="invalid-feedback" id="error-date_of_birth"></div>
+                                </div>
+                            </div>
+
+                            <h5 class="section-title mt-4">Gender</h5>
+                            <div class="mb-2">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="gender" id="gender_male"
+                                           value="Male" {% if form_data and form_data.get('gender') == 'Male' %}checked{% endif %}>
+                                    <label class="form-check-label" for="gender_male">Male</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="gender" id="gender_female"
+                                           value="Female" {% if form_data and form_data.get('gender') == 'Female' %}checked{% endif %}>
+                                    <label class="form-check-label" for="gender_female">Female</label>
+                                </div>
+                                <div class="invalid-feedback d-block" id="error-gender"></div>
+                            </div>
+
+                            <h5 class="section-title mt-4">Academic Information</h5>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="department" class="form-label">Department <span class="text-danger">*</span></label>
+                                    <select class="form-select" id="department" name="department" required>
+                                        <option value="">Loading departments...</option>
+                                    </select>
+                                    <div class="invalid-feedback" id="error-department"></div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="programme" class="form-label">Programme <span class="text-danger">*</span></label>
+                                    <select class="form-select" id="programme" name="programme" required>
+                                        <option value="">Loading programmes...</option>
+                                    </select>
+                                    <div class="invalid-feedback" id="error-programme"></div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="admission_status" class="form-label">Admission Status</label>
+                                    <input type="text" class="form-control" id="admission_status" name="admission_status"
+                                           value="Pending" readonly>
+                                </div>
+                            </div>
+
+                            <h5 class="section-title mt-4">Profile Image</h5>
+                            <div class="mb-3">
+                                <label for="image" class="form-label">Upload Photo (JPG, JPEG, PNG) <span class="text-danger">*</span></label>
+                                <input type="file" class="form-control" id="image" name="image"
+                                       accept=".jpg,.jpeg,.png,image/jpeg,image/png" required>
+                                <div class="invalid-feedback" id="error-image"></div>
+                                <div id="imagePreview" class="mt-3 d-none">
+                                    <img src="" alt="Preview" class="img-thumbnail preview-image">
+                                </div>
+                            </div>
+
+                            <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
+                                <a href="{{ url_for('web.index') }}" class="btn btn-outline-secondary">Cancel</a>
+                                <button type="submit" class="btn btn-primary px-4">
+                                    <i class="bi bi-send me-1"></i>Submit
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/register.js') }}"></script>
+{% endblock %}
